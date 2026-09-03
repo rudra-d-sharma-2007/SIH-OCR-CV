@@ -1,0 +1,82 @@
+[
+  {
+    "id": "potassium_bromate",
+    "name": "Potassium bromate",
+    "keywords": ["potassium bromate", "bromate"],
+    "restriction": "Banned as a flour treatment agent in food in India.",
+    "reference": "FSSAI notification, 2016 (withdrawal of use in bread & bakery)",
+    "severity": "critical"
+  },
+  {
+    "id": "potassium_iodate",
+    "name": "Potassium iodate",
+    "keywords": ["potassium iodate"],
+    "restriction": "Banned for use in bread/bakery products (flour treatment) in India.",
+    "reference": "FSSAI notification, 2016",
+    "severity": "critical"
+  },
+  {
+    "id": "cyclamate",
+    "name": "Cyclamate (artificial sweetener)",
+    "keywords": ["cyclamate", "sodium cyclamate"],
+    "restriction": "Not a permitted artificial sweetener under FSSAI standards.",
+    "reference": "FSS (Food Products Standards & Food Additives) Regulations, 2011",
+    "severity": "critical"
+  },
+  {
+    "id": "rhodamine_b",
+    "name": "Rhodamine B",
+    "keywords": ["rhodamine"],
+    "restriction": "Non-permitted synthetic colour — common adulterant, not allowed in food.",
+    "reference": "FSS (Food Products Standards & Food Additives) Regulations, 2011",
+    "severity": "critical"
+  },
+  {
+    "id": "metanil_yellow",
+    "name": "Metanil yellow",
+    "keywords": ["metanil yellow"],
+    "restriction": "Non-permitted synthetic colour, not allowed in food.",
+    "reference": "FSS (Food Products Standards & Food Additives) Regulations, 2011",
+    "severity": "critical"
+  },
+  {
+    "id": "auramine",
+    "name": "Auramine",
+    "keywords": ["auramine"],
+    "restriction": "Non-permitted synthetic colour, not allowed in food.",
+    "reference": "FSS (Food Products Standards & Food Additives) Regulations, 2011",
+    "severity": "critical"
+  },
+  {
+    "id": "sudan_dyes",
+    "name": "Sudan dyes",
+    "keywords": ["sudan"],
+    "restriction": "Non-permitted industrial dyes, not allowed in food.",
+    "reference": "FSSAI / Codex alerts",
+    "severity": "critical"
+  },
+  {
+    "id": "argemone_oil",
+    "name": "Argemone (prickly poppy) oil",
+    "keywords": ["argemone"],
+    "restriction": "Adulterant in edible oils — consumption causes epidemic dropsy; not permitted.",
+    "reference": "FSSAI adulteration guidance",
+    "severity": "critical"
+  },
+  {
+    "id": "silver_leaf_vark",
+    "name": "Silver leaf (vark / chandi varak)",
+    "keywords": ["silver leaf", "vark", "chandi varak", "silver vark"],
+    "restriction": "Permitted only as food-grade silver foil conforming to IS 6983:2008; non-food-grade foil is prohibited.",
+    "reference": "FSSAI advisory; IS 6983:2008",
+    "severity": "warn"
+  },
+  {
+    "id": "msg_in_infant_food",
+    "name": "Monosodium glutamate in infant food",
+    "keywords": ["monosodium glutamate"],
+    "restriction": "MSG is permitted in adult foods only in limited use; not permitted in infant food products.",
+    "reference": "FSS (Food Products Standards & Food Additives) Regulations, 2011",
+    "severity": "warn"
+  }
+]

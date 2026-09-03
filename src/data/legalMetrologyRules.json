@@ -1,0 +1,72 @@
+[
+  {
+    "id": "name_of_food",
+    "title": "Name of the food",
+    "requirement": "The proper/common name of the food on the principal display panel.",
+    "reference": "FSS (Packaging & Labelling) Regulations, 2011 – reg. 2.2.2",
+    "severity": "warn"
+  },
+  {
+    "id": "mrp_declared",
+    "title": "MRP (incl. of all taxes)",
+    "requirement": "Retail sale price (MRP) inclusive of all taxes, in Indian currency, on the package.",
+    "reference": "Legal Metrology (Packaged Commodities) Rules, 2011 – r.6(1)(f)",
+    "severity": "critical"
+  },
+  {
+    "id": "net_quantity",
+    "title": "Net quantity declared",
+    "requirement": "Net quantity in standard units of weight/measure on the principal display panel.",
+    "reference": "Legal Metrology (Packaged Commodities) Rules, 2011 – r.6(1)(g)",
+    "severity": "critical"
+  },
+  {
+    "id": "manufacturer_details",
+    "title": "Manufacturer / packer details",
+    "requirement": "Name and complete address of the manufacturer, packer or importer (with license no. where applicable).",
+    "reference": "Legal Metrology (Packaged Commodities) Rules, 2011 – r.6(1)(c) & (d)",
+    "severity": "critical"
+  },
+  {
+    "id": "date_marks",
+    "title": "Date marking (mfg / best-before / use-by)",
+    "requirement": "Month & year of manufacture or pack, or a 'best before'/'use by' date, per the commodity class.",
+    "reference": "Legal Metrology (Packaged Commodities) Rules, 2011 – r.6(1)(j), r.2(m)",
+    "severity": "critical"
+  },
+  {
+    "id": "consumer_care",
+    "title": "Consumer care contact",
+    "requirement": "Customer care / complaint contact details on the label.",
+    "reference": "Legal Metrology (Packaged Commodities) Rules, 2011 – r.6(1)(e)",
+    "severity": "warn"
+  },
+  {
+    "id": "fssai_licence",
+    "title": "FSSAI licence number",
+    "requirement": "FSSAI licence/registration number (14-digit) displayed on packaged food.",
+    "reference": "FSS (Packaging & Labelling) Regulations, 2011 – reg. 2.4",
+    "severity": "warn"
+  },
+  {
+    "id": "ingredients_list",
+    "title": "Ingredient list",
+    "requirement": "Complete list of ingredients in descending order of weight.",
+    "reference": "FSS (Packaging & Labelling) Regulations, 2011 – reg. 2.2.3(1)",
+    "severity": "warn"
+  },
+  {
+    "id": "vegetarian_mark",
+    "title": "Veg / non-veg mark",
+    "requirement": "Green/brown square dot mark indicating vegetarian or non-vegetarian.",
+    "reference": "FSS (Packaging & Labelling) Regulations, 2011 – reg. 2.2.2(4)",
+    "severity": "warn"
+  },
+  {
+    "id": "expiry_not_past",
+    "title": "Expiry date not yet passed",
+    "requirement": "If an expiry/best-before date is present it should not already be past on the day of inspection.",
+    "reference": "Enforcement check (FSSAI + LM)",
+    "severity": "critical"
+  }
+]
