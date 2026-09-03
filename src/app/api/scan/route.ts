@@ -68,19 +68,10 @@ export async function POST(request: NextRequest) {
     tmpPath = path.join(os.tmpdir(), `labellens-${Date.now()}-${Math.random().toString(36).slice(2)}.jpg`);
     await fs.writeFile(tmpPath, buffer);
 
-    const worker = await getWorker();
-    const result = await worker.recognize(tmpPath, {
-      text: true,
-      blocks: false,
-      layoutBlocks: false,
-      hocr: false,
-      tsv: false,
-      box: false,
-      unlv: false,
-      sd: false,
-      pdf: false,
-    });
-    const text = (result.data.text ?? "").trim();
+    // Preferred: the Python FastAPI + OpenCV + PaddleOCR service (api/main.py).
+    // Enabled by setting PYTHON_OCR_URL in Settings -> Environment. Falls back
+    // to the bundled Node Tesseract worker when unset or unreachable.
+    const text = await ocrText(buffer, tmpPath);
 
     const fields = text.length > 3 ? parseLabelText(text) : null;
 
@@ -112,4 +103,42 @@ export async function POST(request: NextRequest) {
   } finally {
     if (tmpPath) await fs.unlink(tmpPath).catch(() => undefined);
   }
+}
+
+async function ocrText(buffer: Buffer, tmpPath: string): Promise<string> {
+  const pythonUrl = process.env.PYTHON_OCR_URL;
+  if (pythonUrl) {
+    try {
+      const form = new FormData();
+      form.append(
+        "image",
+        new File([new Uint8Array(buffer)], "label.jpg", { type: "image/jpeg" })
+      );
+      const res = await fetch(`${pythonUrl.replace(/\/$/, "")}/ocr`, {
+        method: "POST",
+        body: form,
+        signal: AbortSignal.timeout(60_000),
+      });
+      if (res.ok) {
+        const json = (await res.json()) as { text?: string; engine?: string };
+        const text = (json.text ?? "").trim();
+        if (text) return text;
+      }
+    } catch {
+      // fall through to the bundled OCR worker
+    }
+  }
+  const worker = await getWorker();
+  const result = await worker.recognize(tmpPath, {
+    text: true,
+    blocks: false,
+    layoutBlocks: false,
+    hocr: false,
+    tsv: false,
+    box: false,
+    unlv: false,
+    sd: false,
+    pdf: false,
+  });
+  return (result.data.text ?? "").trim();
 }

@@ -1,0 +1,4 @@
+# Optional — installs PaddlePaddle (~200 MB) + PaddleOCR (~large).
+# Pinned to the 2.7.x API shape used by api/main.py.
+paddlepaddle==2.6.1
+paddleocr==2.7.0.3
